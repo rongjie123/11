@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+int count;
+void solve(int n){    
+int i;    
+if(n == 1)//当商为1时即为已经算出一次分解累计+1        
+count++;    
+for(i=2;i<=n;i++)//每个数进行遍历   
+{  
+     if(n % i == 0)//mod为0 即为可分解的数          
+                solve(n/i);//进行分解    
+                }
+ }
+ int main()
+ {    
+ int n;    
+ while(scanf("%d",&n)!=EOF){        
+     count = 0;       
+     solve(n);       
+     printf("%d\n",count);    
+     }     
+     return 0;
+}
